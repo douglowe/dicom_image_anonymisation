@@ -1,0 +1,21 @@
+[project]
+name = "image-tooling"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Douglas Lowe", email = "10961945+douglowe@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.5.0",
+    "pillow>=12.3.0",
+    "pydicom>=3.0.2",
+]
+
+[project.scripts]
+image-tooling = "image_tooling:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
