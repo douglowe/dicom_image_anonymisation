@@ -12,6 +12,7 @@ dependencies = [
     "numpy>=2.5.3",
     "pillow>=12.3.0",
     "pydicom>=3.0.2",
+    "pyyaml>=6.0.3",
 ]
 
 [project.scripts]
@@ -20,3 +21,8 @@ image-tooling = "image_tooling:main"
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
