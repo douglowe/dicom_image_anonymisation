@@ -40,6 +40,16 @@ mask:
 
 Masks will be bounding boxes, defined by the pixel count from the origin of the image (usually the lower-left corner).
 
+## Running the Tests
+
+To run the test suite in the project environment, use:
+
+```bash
+uv run pytest
+```
+
+This will install and use the dev dependencies from the UV-managed environment, including pytest.
+
 ## Copyright
 
 Copyright (2026) Douglas Lowe, University of Manchester
