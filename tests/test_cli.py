@@ -18,8 +18,6 @@ def write_dicom(path: Path, image: np.ndarray) -> None:
     meta.ImplementationClassUID = "1.2.3.4.5.6.7.8"
 
     ds = FileDataset(str(path), {}, file_meta=meta, preamble=b"\0" * 128)
-    ds.is_little_endian = True
-    ds.is_implicit_VR = False
     ds.SOPClassUID = meta.MediaStorageSOPClassUID
     ds.SOPInstanceUID = meta.MediaStorageSOPInstanceUID
     ds.PatientName = "Test^Patient"
@@ -32,7 +30,8 @@ def write_dicom(path: Path, image: np.ndarray) -> None:
     ds.HighBit = 7
     ds.PixelRepresentation = 0
     ds.PixelData = image.astype(np.uint8).tobytes()
-    ds.save_as(path, write_like_original=False)
+    ds.file_meta.TransferSyntaxUID = ExplicitVRLittleEndian
+    ds.save_as(path, enforce_file_format=True)
 
 
 def test_cli_writes_masked_png(tmp_path):
