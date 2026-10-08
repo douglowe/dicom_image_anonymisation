@@ -38,4 +38,12 @@ mask:
   upper-edge: 100
 ```
 
-Masks will be bounding boxes, defined by the pixel count from the origin of the image (usually the lower-left corner). 
+Masks will be bounding boxes, defined by the pixel count from the origin of the image (usually the lower-left corner).
+
+## Copyright
+
+Copyright (2026) Douglas Lowe, University of Manchester
+
+## AI assistance
+
+This code was created with assistance from GitHub Copilot, an AI programming agent used to help design, implement, and validate the CLI and supporting logic.
